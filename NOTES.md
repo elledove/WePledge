@@ -35,3 +35,7 @@ Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails ap
 • Follow patterns in the Rails Style Guide and the Ruby Style Guide.
 
 Do not use scaffolding to build your project. Your goal here is to learn. Scaffold is a way to get up and running quickly, but learning a lot is not one of the benefits of scaffolding.
+
+scope methods I might want:
+filter organizations based on animals status(endangered or not)
+filter based on animal species and/or type
