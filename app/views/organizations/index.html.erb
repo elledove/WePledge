@@ -1,0 +1,10 @@
+
+<h1> Animal Organizations </h1>
+Hey, check out all of the awesome animal organizations and rescues there are! Let your money find its way to a good claws...oops cause :)
+<br>
+<% @orgz.each do |o| %>
+  <p>  <%= o.name %> </p>
+  <p>  <%= o.location %> </p>
+  <p>  <%= o.animal %> </p>
+  
+    <% end %>
