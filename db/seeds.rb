@@ -10,4 +10,6 @@ Organization.create(name: 'The Kanagroo Sanctuary', location: 'Alice Springs, Au
 Organization.create(name: 'Wildlife Sanctuary', location: 'Somewhere, India', animal: 'multiple')
 Organization.create(name: 'Black Jaguar, White Tiger', location: 'Somewhere, Mexico', animal: 'big cats')
 
-Donation.create(date:)
+Donation.create(date:'2020/11/12', description: 'This ones for the dogs', amount: 25.00)
+Donation.create(description: 'This ones for the whale', amount: 55.00)
+
