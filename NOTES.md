@@ -39,3 +39,18 @@ Do not use scaffolding to build your project. Your goal here is to learn. Scaffo
 scope methods I might want:
 filter organizations based on animals status(endangered or not)
 filter based on animal species and/or type
+
+
+## DonationsController will need:
+# index action ( get '/donations' => to: 'donations#index')
+# new action( get '/donations/new' => to: 'donations#new')
+# create action( post '/donations' => to: 'donations#create')
+# show action(possibly)( get '/donations/:id' => to 'donations#show')
+
+# DonationsController routes:
+ * get  '/donations/:donation_id/organizations/new' ???? Does this fulfill the requirements for nested resource?
+
+ * get '/donations/:donation_id/organizations' to: => 'donations#index' (if we use this we dont need the donations#show action)
+ * get '/donations/:donation_id/organizations' to: => 'organizations#index'
+ * get '/donations/:donation_id/organizations/new' to: => 'organizations#new'
+ * posst 'organizations' to: => 'organizations#create'
