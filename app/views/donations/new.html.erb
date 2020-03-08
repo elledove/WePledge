@@ -1,0 +1,25 @@
+<h1> Let's Start A New Donation! </h1>
+
+<h2>Look at you! Being all proactive and stuff! Way to go.....</h2>
+
+<br>
+<p> Choose the Organization you would like to give to below: </p>
+
+
+<br>
+<%= form_for @donation do |f|%>
+<%= f.label :date %>
+<%= f.date_field :date %>
+
+<%= f.label :amount %>
+<%= f.number_field :amount %>
+
+<%= f.label :description %>
+<%= f.text_field :description %>
+
+<%= f.submit "Submit Donation" %>
+
+<% end %>
+
+<p> Choose the Organization you would like to give to below: </p>
+

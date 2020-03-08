@@ -8,4 +8,10 @@ class OrganizationsController <  ApplicationController
      def show
         #will show individual organizations
      end
+
+     def create
+
+        # might be able to creat but will need to have the organization approved first?
+        
+     end
 end
