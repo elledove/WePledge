@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_044114) do
+ActiveRecord::Schema.define(version: 2020_03_08_033056) do
 
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
     t.integer "user_id"
     t.string "description"
-    t.integer "date"
     t.integer "orgz_id"
+    t.date "date"
   end
 
   create_table "organizations", force: :cascade do |t|
