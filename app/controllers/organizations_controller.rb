@@ -7,9 +7,8 @@ class OrganizationsController <  ApplicationController
    end
 
     def index
-      #binding.pry
-      # @orgz = Organization.all
-       @donation = Donation.find_by(id: params[:donation_id])
+       @orgz = Organization.all
+       #@donation = Donation.find_by(id: params[:donation_id])
      
     end
 
@@ -23,5 +22,11 @@ class OrganizationsController <  ApplicationController
 
         # might be able to creat but will need to have the organization approved first?
         
+     end
+
+     private 
+
+     def organization_params
+      params.require(:organization).permit(:date, :amount, :description, :organiztion_id)
      end
 end

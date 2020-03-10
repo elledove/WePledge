@@ -3,6 +3,10 @@
 Hey, check out all of the awesome animal organizations and rescues there are! Let your money find its way to a good claws...oops cause :)
 <br>
 
-<%= @donation.amount %>
+<% @orgz.each do |o| %>
+
+<p><%= link_to o.name, new_organization_donation_url(o) %></p>
+
+<% end %>
   
 

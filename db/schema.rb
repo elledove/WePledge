@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_03_08_033056) do
     t.integer "amount"
     t.integer "user_id"
     t.string "description"
-    t.integer "orgz_id"
+    t.integer "organization_id"
     t.date "date"
   end
 
