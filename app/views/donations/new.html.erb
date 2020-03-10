@@ -3,8 +3,12 @@
 <h2>Look at you! Being all proactive and stuff! Way to go.....</h2>
 
 <br>
-<p> Choose the Organization you would like to give to below: </p>
 
+<% @donation.errors.full_messages.each do |message|%>
+
+ <p><i> <%= message %> </i></p>
+
+<% end %>
 
 <br>
 <%= form_for @donation do |f|%>

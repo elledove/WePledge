@@ -10,11 +10,11 @@ class DonationsController < ApplicationController
     end
 
     def create
-        @donation = Donation.create
-        if @donation.valid?
-           redirect_to welcome_path
+        @donation = Donation.create(donations_params)
+        if @donation.save
+           redirect_to new_donation_organization_path(@donation)
         else 
-            binding.pry
+            #binding.pry
             render :new 
         end
     end
@@ -25,6 +25,6 @@ class DonationsController < ApplicationController
     private
 
     def  donations_params
-        params.require(:donations).permit(:date, :amount, :description)
+        params.require(:donation).permit(:date, :amount, :description)
     end
 end
