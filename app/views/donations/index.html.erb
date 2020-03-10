@@ -10,8 +10,9 @@
 <% end%>
 
 <%@donations.each do |d| %>
-<h3><%= link_to d.organization_id %> 
+
+<h3><%= link_to d.date  %> 
 <% end %>
 
 
-<p> To make a new donation <%= link_to 'New' , new_donation_path %> </p>
+<p> To make a new donation <%= link_to 'New' , new_organization_donation_path %> </p>

@@ -1,7 +1,13 @@
 class DonationsController < ApplicationController
     def index
          
-        @donations = Donation.all
+        if params[:organization_id]
+            @orgz = Organization.find_by(id: params[:organization_id])
+            @donations = @orgz.donations
+          else
+            @donations = Donation.all
+        end
+            
     end
 
     def new
@@ -11,10 +17,11 @@ class DonationsController < ApplicationController
 
     def create
         @donation = Donation.new(donations_params)
+        #binding.pry
         if @donation.save 
-           redirect_to organization_donations_path(@donation)
+           redirect_to organization_donations_path(@donation.organization)
         else 
-            #binding.pry
+            
             render :new 
         end
     end

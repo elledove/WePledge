@@ -14,7 +14,7 @@ class OrganizationsController <  ApplicationController
 
 
      def show
-        #will show individual organizations
+        @orgz = Organization.find(params[:id])
      end
 
      def create
