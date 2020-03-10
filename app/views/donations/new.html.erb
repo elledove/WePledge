@@ -15,9 +15,13 @@
 
 <%= f.label :description %>
 <%= f.text_field :description %>
+
+<% if params[:organization_id]%>
+<%= f.hidden_field(:organization_id)%>
+<%else %>
 <%= f.collection_select :organization, Organization.all, :id, :name %>
 
-
+<% end %>
 <%= f.submit "Submit Donation" %>
 
 <% end %>
