@@ -3,12 +3,7 @@
 <h2>Look at you! Being all proactive and stuff! Way to go.....</h2>
 
 <br>
-
-<% @donation.errors.full_messages.each do |message|%>
-
- <p><i> <%= message %> </i></p>
-
-<% end %>
+<%= render partial: '/errors', locals: {record: @donation} %>
 
 <br>
 <%= form_for @donation do |f|%>

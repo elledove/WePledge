@@ -1,9 +1,14 @@
-Here is a list of donations that you have made. You go you! You are making a difference!
+<h1>Here is a list of donations that you have made !!!!</h1> 
+<br>
+<h3> You go you! You are making a difference! </h3>
+<br>
 
 <% @donations.each do |o| %>
-<%= o.date %>
+ <li><%= o.date %>
 <%= o.amount %>
-<%= o.description %>
+<%= o.description %></li>
 <% end%>
 
-<p> To make a new donation <%= link_to 'New' ,"/donations/new"%> </p>
+
+
+<p> To make a new donation <%= link_to 'New' , new_donation_path %> </p>
