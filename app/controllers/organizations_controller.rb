@@ -5,7 +5,8 @@ class OrganizationsController <  ApplicationController
    end
 
     def index
-     @orgz= Organization.all
+      
+     @orgz = Organization.all
     end
 
 

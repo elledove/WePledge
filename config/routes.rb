@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   #get 'welcome/index'
   root 'welcome#index'
   resources :users 
-  resources :organizations, only: :index
+  resources :organizations, only: [:index, :new]
   #get '/donations', to: 'donations#index'
 resources :donations, only: [:index, :create, :new] do
 resources :organizations, only: [:index, :new]
