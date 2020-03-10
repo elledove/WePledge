@@ -17,6 +17,7 @@
 <%= f.text_field :description %>
 <%= f.collection_select :organization, Organization.all, :id, :name %>
 
+
 <%= f.submit "Submit Donation" %>
 
 <% end %>
