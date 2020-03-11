@@ -24,6 +24,14 @@ class OrganizationsController <  ApplicationController
         
      end
 
+     def search 
+      if params[:search]
+       @orgz = User.organizations.searched(params[:search])
+     else
+       @orgz = User.organizations
+       end
+     end
+
      private 
 
      def organization_params
