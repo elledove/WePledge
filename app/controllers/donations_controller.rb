@@ -22,7 +22,7 @@ class DonationsController < ApplicationController
            redirect_to organization_donations_path(@donation.organization)
         else 
             
-            render :new 
+            render :new
         end
     end
 

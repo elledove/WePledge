@@ -1,4 +1,5 @@
-class SessionsController < ApplicatonController
+class SessionsController < ApplicationController
+    
 
     def new
     end
@@ -10,9 +11,10 @@ class SessionsController < ApplicatonController
         user
         session[:user_id] = user.id
 
-        render ''
+        render '/organizations'
         
       else
+        render :new
         
      end
 

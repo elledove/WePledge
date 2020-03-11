@@ -8,18 +8,18 @@
 <br>
 <%= form_for @donation do |f|%>
 <%= f.label :date %>
-<%= f.date_field :date %>
+<div><%= f.date_field :date %> </div>
 
 <%= f.label :amount %>
-<%= f.number_field :amount %>
+<div><%= f.number_field :amount %></div>
 
 <%= f.label :description %>
-<%= f.text_field :description %>
+<div><%= f.text_area :description %></div>
 
 <% if params[:organization_id]%>
 <%= f.hidden_field(:organization_id, value: params[:organization_id])%>
 <%else %>
-<%= f.collection_select :organization_id, Organization.all, :id, :name %>
+<div><%= f.collection_select :organization_id, Organization.all, :id, :name %></div>
 
 <% end %>
 <%= f.submit "Submit Donation" %>
