@@ -28,13 +28,13 @@ class OrganizationsController <  ApplicationController
       if params[:search]
        @orgz = User.organizations.searched(params[:search])
      else
-       @orgz = User.organizations
+       @orgz = User.organizations # will have to change this eventually using a created method called user_login??
        end
      end
 
      private 
 
      def organization_params
-      params.require(:organization).permit(:date, :amount, :description, :organiztion_id)
+      params.require(:organization).permit(:date, :amount, :description, :organiztion_id, :animal)
      end
 end

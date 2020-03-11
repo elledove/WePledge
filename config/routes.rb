@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :organizations 
  resources :donations, only:[:create, :new]
  resources :organizations, only: [:index, :new] do
-resources :donations, only: [:index, :create, :new]
+resources :donations, only: [:index, :create, :new, :show]
 #end
 
 
