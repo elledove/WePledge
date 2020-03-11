@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'organization/animal_search' , to: 'organizations#search', as: 'animal_search'
   
+  resources :sessions
   resources :users 
   resources :organizations 
  resources :donations, only:[:create, :new]
