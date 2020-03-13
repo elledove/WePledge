@@ -1,11 +1,17 @@
 class DonationsController < ApplicationController
+
+    before_action :require_login
+
     def index
-         
+            
         if params[:organization_id]
             @orgz = Organization.find_by(id: params[:organization_id])
             @donations = @orgz.donations
-          else
+            @userdonation = Donation.user_owns(current_user,@donations)
+            #binding.pry
+        else
             @donations = Donation.all
+        
         end
             
     end
@@ -16,7 +22,8 @@ class DonationsController < ApplicationController
     end
 
     def create
-        @donation = Donation.new(donations_params)
+        @donation = current_user.donations.build(donations_params)
+        #@donation = Donation.new(donations_params)
         #binding.pry
         if @donation.save 
            redirect_to organization_donations_path(@donation.organization)
@@ -30,6 +37,7 @@ class DonationsController < ApplicationController
        find_by
     end
 
+    
     private
 
     def  donations_params
