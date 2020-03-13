@@ -4,27 +4,28 @@ class SessionsController < ApplicationController
     end
 
     def create
-        user = User.find_by(username: params["user"]["username"]).try(:authenticate, params["user"]["password"])
-    #   user = User.find_by(username: params["username"]).try(:authenticate, params["password"])
-       if 
-        user
-        session[:user_id] = user.id
-
-        render '/organizations'
-        
-      else
-        render :new
-        
-     end
+        @user = User.find_by(username: params[:username])
+        if !@user
+         @error = "Uhmm....So this is a bit awkaward. Have you been here before? Can't seem to find you."
+         render :new
+       elsif !@user.authenticate(params[:password])
+         @error = "Psst..Check your password!"
+         render :new
+       else  
+        log_in(@user)
+ 
+         redirect_to organizations_path
+         
+       end
+       
 
     end
 
+   def destroy
+    session.clear
 
-    def login
-    end
-    
+    redirect_to '/'
 
-    def logout
-    end
+   end
 
 end

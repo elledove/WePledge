@@ -6,8 +6,8 @@ validates_presence_of :name
 scope :search, ->(animal) {where("animal LIKE ?" , "%#{animal}")}
 
 
-def self.search
-    self.where(category: 'animal') # remember you have this and the scope above!
+def self.search(animal_type)
+    self.where(animal: animal_type) # remember you have this and the scope above!
 end
 
 end

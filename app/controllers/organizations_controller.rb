@@ -25,10 +25,11 @@ class OrganizationsController <  ApplicationController
      end
 
      def search 
-      if params[:search]
-       @orgz = User.organizations.searched(params[:search])
-     else
-       @orgz = User.organizations # will have to change this eventually using a created method called user_login??
+       params[:search]
+       @orgz = Organization.search(params[:search])
+      if  @orgz == []
+      @error =
+       @orgz = Organization.all  # will have to change this eventually using a created method called user_login??
        end
      end
 
