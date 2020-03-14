@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   #get 'welcome/index'
   root 'welcome#index'
   get 'organization/animal_search' , to: 'organizations#search', as: 'animal_search'
-  get 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/:provider/callback', to: 'sessions#create', via:[:get, :post]
 
 
   get '/login', to: 'sessions#new'
