@@ -1,10 +1,12 @@
 <h1> Search for a specific animal type </h1>
 
+
 <%= form_tag animal_search_path, :method => 'get' do %>
 
 <%= text_field_tag :search, params[:search] %>
 
 <%= submit_tag "Search", name: nil  %>
+<% @error %>
 
 <% end %>
 

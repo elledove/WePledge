@@ -16,7 +16,9 @@ def log_in(user)
     session[:user_id] = user.id
 end
 
-
+def authorized?
+    logged_in? && current_user.admin?
+end
     
 end
 

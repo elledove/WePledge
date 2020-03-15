@@ -9,4 +9,8 @@ def logged_in?
     !!current_user
 end
 
+def authorized?
+    logged_in? && current_user.admin?
+end
+
 end

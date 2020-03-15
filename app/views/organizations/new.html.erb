@@ -1,1 +1,17 @@
-Juicy Juicy
+<h1>Let's Add Some Reputable Organizations!</h1> 
+
+<%= render partial: '/errors', locals: {record: @org} %>
+<br>
+<%= form_for @org do |f|%>
+<%= f.label :Name %>
+<div><%= f.text_field :name %> </div>
+
+<%= f.label :Location %>
+<div><%= f.text_area :location %></div>
+
+<%= f.label :Animal %>
+<div><%= f.text_field :animal %></div>
+<br>
+<%= f.submit "Submit Organization" %>
+
+<% end %>

@@ -6,14 +6,21 @@
  </div>
  <% end %>
 
- <div class="nav">
+
+<div class="nav">
  <div><a href="/organizations"> Organizations</a></div>
- <% if logged_in? %>
- <div><a href="/logout"> Log Out </a></div>
+
+<% if authorized? %>
+<div><a href="/"> Home </a></div>
+  <div><a href="/organizations/new"> Add New Organization </a></div>
+  <div><a href="/logout"> Log Out </a></div>
+
+ <% elsif logged_in? %>
+   <div><a href="/logout"> Log Out </a></div>
  <% else%>
- <div><a href="/"> Home </a></div>
-<div><a href="/login"> Log In </a></div>
-<div><a href="/signup"> Signup </a></div>
+   <div><a href="/"> Home </a></div>
+  <div><a href="/login"> Log In </a></div>
+  <div><a href="/signup"> Signup </a></div>
  <% end %>
  </div>
  </div>
