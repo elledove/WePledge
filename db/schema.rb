@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_033056) do
+ActiveRecord::Schema.define(version: 2020_03_15_043901) do
 
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_03_08_033056) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.boolean "admin", default: false
   end
 
 end

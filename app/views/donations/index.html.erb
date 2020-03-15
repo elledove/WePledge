@@ -9,24 +9,11 @@
 <h3><%= "Date" %> </h3>
  <li><%= o.date %></li>
  <h3><%= "Amount" %> </h3>
-<li><%= o.amount %></li>
+<li>$ <%= o.amount  %> dollars</li>
 <h3><%= "Description" %> </h3>
 <li><%= o.description %></li>
 
 <% end%>
-
-<%@donations.each do |d| %>
-
-<h3><%= link_to d.organization.name   %></h3>
-
-<% end %>
-
-
-<% @userdonation.each do |d| %>
-
-<%= d.amount %> 
-<% end %>
-
 
 
 <p> To make a new donation <%= link_to 'New' , new_organization_donation_path %> </p>
