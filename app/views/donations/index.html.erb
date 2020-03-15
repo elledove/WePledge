@@ -1,17 +1,24 @@
-<h1>Here is a list of donations that you have made !!!!</h1> 
+<h1>Here is a list of all the donations that you have made !!!!</h1> 
 <br>
-<h3> You go you! You are making a difference! </h3>
+<h3> You go <i>you</i>! You are making a difference! </h3>
 <br>
 
 <% @donations.each do |o| %>
- <li><%= o.date %>
-<%= o.amount %>
-<%= o.description %></li>
+<h3><%= "Organization" %> </h3>
+<b><%= o.organization.name %></b>
+<h3><%= "Date" %> </h3>
+ <li><%= o.date %></li>
+ <h3><%= "Amount" %> </h3>
+<li><%= o.amount %></li>
+<h3><%= "Description" %> </h3>
+<li><%= o.description %></li>
+
 <% end%>
 
 <%@donations.each do |d| %>
 
 <h3><%= link_to d.organization.name   %></h3>
+
 <% end %>
 
 
