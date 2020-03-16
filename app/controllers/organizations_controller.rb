@@ -29,8 +29,9 @@ class OrganizationsController <  ApplicationController
        @orgz = Organization.search(params[:search])
       if  @orgz == []
          @error = "Sorry, We don't have that species added yet! Coming Soon!"
-      redirect_to organizations_path #render?
+        render :index
        end
+       #render :index
      end
 
      private 

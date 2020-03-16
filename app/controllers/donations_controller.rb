@@ -38,7 +38,7 @@ class DonationsController < ApplicationController
     end
 
     def show
-       find_by
+       
     end
 
     

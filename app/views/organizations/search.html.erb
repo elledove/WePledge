@@ -1,6 +1,6 @@
 <p><% @orgz.each do |o| %></p>
 
-<%= o.name %>
+ <%=link_to o.name, new_organization_donation_url(o) %>
 
 <% end %>
 

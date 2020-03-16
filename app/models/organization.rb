@@ -7,7 +7,7 @@ scope :search, ->(animal) {where("animal LIKE ?" , "%#{animal}")}
 
 
 def self.search(animal_type)
-    self.where(animal: animal_type) # remember you have this and the scope above!
+    self.where('lower(animal) = ?', animal_type) # remember you have this and the scope above!
 end
 
 end
